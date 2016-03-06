@@ -43,4 +43,22 @@
         
     }
     
+    function run($rootScope, $location, authentication){
+        
+        $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute){
+            
+           if($location.path()==="/profile" && !authentication.isLoggedIn()){
+               
+               $location.path("/");
+               
+           }
+            
+        });
+        
+    }
+    
+    angular
+        .module("meanApp")
+        .config(["$routeProvider", "$locationProvider", config])
+        .run(["$rootScope", "$location", "authentication", run]);
 }());
