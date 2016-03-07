@@ -7,4 +7,4 @@ var auth = jwt({
     
 });
 
-router.get("/profile", auth crtlProfile.profileRead);
+router.get("/profile", auth, crtlProfile.profileRead);

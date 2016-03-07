@@ -11,7 +11,7 @@ require("./app_api/models/users.js");
 require("./app_api/config/passport.js");
 
 app.use(passport.initialize());
-app.use("./api",routesApi);
+//app.use("./api",routesApi);
 app.use(function(err, req, res, next){
     
     if(err.name==="UnauthorizedError"){
