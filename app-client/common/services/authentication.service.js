@@ -2,10 +2,9 @@
     
     angular
         .module("meanApp")
-        .service("authentication", authentication)
-        .;
+        .service("authentication", authentication);
     
-    authentication.$inject["$http", "$window"]
+    authentication.$inject["$http", "$window"];
     function authentication($http, $window){
         
         var saveToken = function(token){
