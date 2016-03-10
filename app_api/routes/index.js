@@ -9,8 +9,15 @@ var auth = jwt({
 });
 var router = express.Router();
 var profileCtrl = require("../controllers/profile");
+var homeCtrl = require("../controllers/home");
 
 router.get("/profile", auth, profileCtrl.profileRead);
-router.get("/", )
+router.get("/", homeCtrl.sendIndex);
+//function(req, res){
+//    
+//    res.send("succesfully got");
+//    console.log("get successful");
+//    
+//}
 
 module.exports = router;

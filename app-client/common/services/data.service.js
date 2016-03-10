@@ -1,23 +1,31 @@
-function meanData($http, authentication){
+(function(){
     
-    var getProfile = function(){
-        
-        return $http.get("/api/profile", {
-            
-            headers: {
-                
-                Authorization: "Bearer " + authentication.getToken()
-                
-            }
-            
-        })
-        
-    };
+    angular
+        .module("meanApp")
+        .service("meanData", meanData);
     
-    return {
-        
-        getProfile: getProfile
-        
+    authentication.$inject["$http", "authentication"];
+    function meanData($http, authentication){
+
+        var getProfile = function(){
+
+            return $http.get("/api/profile", {
+
+                headers: {
+
+                    Authorization: "Bearer " + authentication.getToken()
+
+                }
+
+            });
+
+        };
+
+        return {
+
+            getProfile: getProfile
+
+        }
+
     }
-    
-}
+}());
